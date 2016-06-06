@@ -37,5 +37,13 @@ public class UserService {
 	{
 		return user.validUser(name, password);
 	}
+	
+	
+	public User  getUserById(int id)
+	{
+	return user.getUserById(id);
+	
+	}
+
 
 }

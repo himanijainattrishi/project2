@@ -8,21 +8,21 @@ public class HomeController
 {
 	
 	
-	@RequestMapping("/")
+	@RequestMapping(value={"/","/index"})
 	  public ModelAndView HomePage()
 	  {
 		 
 		  ModelAndView model=new ModelAndView("index");
 		  return model;
 	  }
-	 @RequestMapping("/index")
+	/* @RequestMapping("/index")
 	  public ModelAndView index()
 	  {
 		 
 		  ModelAndView model=new ModelAndView("index");
 		  return model;
 	  }
-	
+	*/
 	
 	 @RequestMapping("/Contact")
 	  public ModelAndView contactus()

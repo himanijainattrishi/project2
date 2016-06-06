@@ -1,16 +1,23 @@
 package com.controller;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.model.Address;
+
 import com.model.User;
 import com.service.UserService;
 
@@ -37,18 +44,46 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/useradd1", method=RequestMethod.POST)
-	public String addCustomer(@ModelAttribute("user") User u)
+	public String addCustomer(@ModelAttribute("user") User u,HttpServletRequest request)
 		{
+
+	       HttpSession s=request.getSession();
+
 		System.out.println("addcustomer");
-		Address a=new Address();
-		
-		a.setAddid(u.getId());
+	
 		userService.addUser(u);
-	    System.out.println("user login");
-	    return "redirect:/Register";
+		MultipartFile file=u.getImage();
+		String fileloc=s.getServletContext().getRealPath("/resources/pics/");
+		String filename=fileloc+"\\"+u.getId()+".jpg";
+		System.out.println(filename);
+		try{
+	    	  byte b[]=file.getBytes();
+	     FileOutputStream fos=new FileOutputStream(filename);
+	     fos.write(b);
+			fos.close();
+			System.out.println(filename);
+			
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    	   catch (Exception e) {
+	   			// TODO Auto-generated catch block
+	   			e.printStackTrace();
+	   		
+	}
+	
+	System.out.println("user login");
+    return "redirect:/index";
+		
+	}
+		
+		
+		
+	    
 			
 		
-		}
+		
 	 @RequestMapping("/Login")
 	  public String Loginpage(Model m)
 	  {
@@ -89,12 +124,39 @@ public class UserController {
 	 
 	 
 	 @RequestMapping("/Profile")
-	  public ModelAndView userProfile()
+	  public String  userProfile(Model m,@PathVariable("id") int id)
 	  {
+		 System.out.println("id");
 		 
-		  ModelAndView model=new ModelAndView("Profile");
-		  return model;
+		 User u=userService.getUserById(id);
+		  m.addAttribute("u",u);
+		 // m.addAttribute("user",u);
+		  return "Profile";
 	  }
+	 
+	/* @RequestMapping(value="/edit/{id}", method=RequestMethod.POST)
+	  public String update(@PathVariable("id")int id ,@ModelAttribute("user") User u,Model model)
+	  {
+		 model.addAttribute("user",userService.getUserById(id));
+		 
+		 
+		 
+	     
+		  return "index";
+	  }*/
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	
 
 }

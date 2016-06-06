@@ -74,9 +74,22 @@ private SessionFactory sessionFactory;
 	}
 
 
+	public User getUserById(int id) {
+	
+			
+			Session session=sessionFactory.getCurrentSession();
+			User u=(User)session.get(User.class,new Integer(id));
+			System.out.println(u);
+			return u;
+			
+		}
+
+	}
+
+
 	
 		
-	}
+
 
 
 	

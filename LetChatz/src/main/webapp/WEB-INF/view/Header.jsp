@@ -1,4 +1,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@page isELIgnored="false"%>
+
 <html>
 <head>
 <title>HOME PAGE</title>

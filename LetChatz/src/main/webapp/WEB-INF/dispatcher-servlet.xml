@@ -18,6 +18,13 @@ xmlns:context="http://www.springframework.org/schema/context"
        <mvc:annotation-driven/>
  <mvc:default-servlet-handler/>
 
+		 <bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
+		 <property name="maxUploadSize" value="50000" />
+</bean>
+		
+		
+		
 		
 	
 	

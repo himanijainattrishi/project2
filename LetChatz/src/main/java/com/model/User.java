@@ -35,21 +35,45 @@ public class User implements Serializable {
 	private String lastName;
 	private String email;
 	private String password;
+	private int zipcode;
+	private String state;
+	private int mobile;
+	
 	private Date dob;
-	@OneToOne(cascade = {CascadeType.ALL})
-	
-	@JoinColumn(name = "addid")
-	private Address address;
-	
 	private String gender;
 	@Transient
 	private MultipartFile image;
-	public Address getAddress() {
-		return address;
+	private String city;
+	public String getCity() {
+		return city;
 	}
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setCity(String city) {
+		this.city = city;
 	}
+	public int getZipcode() {
+		return zipcode;
+	}
+	public void setZipcode(int zipcode) {
+		this.zipcode = zipcode;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public int getMobile() {
+		return mobile;
+	}
+	public void setMobile(int mobile) {
+		this.mobile = mobile;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
+	
 	
 	public MultipartFile getImage() {
 		return image;
