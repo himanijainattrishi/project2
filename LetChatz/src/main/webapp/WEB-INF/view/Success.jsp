@@ -1,4 +1,5 @@
-
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@page isELIgnored="false" %>
 <html>
 <head>
 <title>HOME PAGE</title>
@@ -68,16 +69,16 @@ text-align: right;
  <body>
  <div class="container">
  <div class="row">
- <div class="col-sm-5"><img src="resources/images/niitcloud.jpg" alt="...">
+ <div class="col-sm-4"><img src="resources/images/niitcloud.jpg" alt="...">
  </div>
- <div class="col-sm-3"></div>
- <div class="col-sm-4">
+ <div class="col-sm-2"></div>
+ <div class="col-sm-6">
  
  <ul class="nav nav-tabs">
-  <li class="active"><a href="#">HOME</a></li>
+ <li class="active"><a href="index">HOME</a></li>
   <li><a href="Profile">MY PROFILE</a></li>
   <li><a href="#">SIGN OUT</a></li>
-  
+  <li><i><b>WELCOME ${loginBean.name}</i></b></li>
 </ul>
  </div>
  </div>
@@ -110,6 +111,9 @@ text-align: right;
                 <li class="nav-item">
                     <a class="nav-link" href="#">PERFORMANCE</a>
                 </li>
+                
+                
+                
                
             </ul>
            

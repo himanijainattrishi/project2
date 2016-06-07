@@ -84,6 +84,12 @@ private SessionFactory sessionFactory;
 			
 		}
 
+
+	public void updateUser(User user) {
+		
+		
+	}
+
 	}
 
 

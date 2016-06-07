@@ -91,6 +91,7 @@ public class UserController {
 			
 			System.out.println("Login page");
 				m.addAttribute("loginBean", u);
+			
 				return "Login";
 		
 	  }
@@ -124,28 +125,34 @@ public class UserController {
 	 
 	 
 	 @RequestMapping("/Profile")
-	  public String  userProfile(Model m,@PathVariable("id") int id)
+	  public String  userProfile(Model m)
 	  {
-		 System.out.println("id");
 		 
-		 User u=userService.getUserById(id);
-		  m.addAttribute("u",u);
-		 // m.addAttribute("user",u);
+		 User u=new User();
+	 System.out.println(u.getId());
+	
+		System.out.println(u.getName());
+
+		
+		 m.addAttribute("user1",u);
+		
+		  System.out.println("user1");
 		  return "Profile";
 	  }
 	 
-	/* @RequestMapping(value="/edit/{id}", method=RequestMethod.POST)
-	  public String update(@PathVariable("id")int id ,@ModelAttribute("user") User u,Model model)
+	 @RequestMapping(value="/edit/{id}", method=RequestMethod.POST)
+	  public String update(@PathVariable("id")int id ,@ModelAttribute("user1") User u,Model model)
 	  {
-		 model.addAttribute("user",userService.getUserById(id));
+		 
+		 System.out.println("user id is" +u.getId());
+		 model.addAttribute("user1",userService.getUserById(id));
 		 
 		 
 		 
 	     
 		  return "index";
-	  }*/
-
-	 
+	  }
+ 
 	 
 	 
 	 
