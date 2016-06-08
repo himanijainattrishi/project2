@@ -55,14 +55,14 @@ private SessionFactory sessionFactory;
 	}
 
 
-	public Boolean validUser(String name, String password) {
+	public Boolean validUser(int id, String password) {
 		boolean check=false;
 		
 	    Session s=sessionFactory.openSession();
 	    Transaction t=s.beginTransaction();
-	    Query q=s.createQuery("from User where name=? and password=?");
+	    Query q=s.createQuery("from User where id=? and password=?");
 	   
-	    q.setString(0,name);
+	    q.setInteger(0,id);
 	    q.setString(1, password);
 	    List list = q.list();
 	    if(list!=null && list.size()>0)
@@ -76,10 +76,11 @@ private SessionFactory sessionFactory;
 
 	public User getUserById(int id) {
 	
-			
-			Session session=sessionFactory.getCurrentSession();
-			User u=(User)session.get(User.class,new Integer(id));
-			System.out.println(u);
+		 Session s=sessionFactory.openSession();
+		    Transaction t=s.beginTransaction();
+			//Session session=sessionFactory.getCurrentSession();
+			User u=(User)s.get(User.class,new Integer(id));
+			System.out.println("user id is" +u);
 			return u;
 			
 		}

@@ -10,11 +10,11 @@
                  <h2 class="text-center">Login Page</h2>
                 <br/>
                 <div class="form-group">
-               <form:input path="name" class="form-control input-lg" />
+            id   <form:input path="id" class="form-control input-lg" />
                  <!--    <input type="email" class="form-control" id="userid" placeholder="User id"> -->
                 </div>
                 <div class="form-group">
-                <form:password path="password" class="form-control"/>
+             password   <form:password path="password" class="form-control"/>
                    <!--  <input type="password" class="form-control" id="pwd" placeholder="Password"> -->
                 </div>
                 <br/>

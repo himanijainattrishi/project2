@@ -33,9 +33,9 @@ public class UserService {
 		 user.addUser(u);
 		 } 
 	@Transactional
-	public Boolean logincheck(String name,String password)
+	public Boolean logincheck(int id,String password)
 	{
-		return user.validUser(name, password);
+		return user.validUser(id, password);
 	}
 	
 	

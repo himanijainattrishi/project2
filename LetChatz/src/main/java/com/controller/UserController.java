@@ -97,17 +97,21 @@ public class UserController {
 	  }
 	 
 	 @RequestMapping(value="/userLogin", method=RequestMethod.POST)
-	 public ModelAndView checkLogin(HttpServletRequest request,@ModelAttribute("loginBean") User u)
+	 public ModelAndView checkLogin(HttpServletRequest request,@RequestParam("id") int  id,@ModelAttribute("loginBean") User u,Model m)
 	 {
 		 ModelAndView model=null;
+		u=userService.getUserById(id);
+		m.addAttribute("user", u);
 		 try
 		 {
-			boolean isValidUser=userService.logincheck(u.getName(),u.getPassword());
+		/*	boolean isValidUser=userService.logincheck(u.getName(),u.getPassword());*/
+				boolean isValidUser=userService.logincheck(u.getId(),u.getPassword());
 			System.out.println(u.getName());
 			System.out.println(u.getPassword());
+			u.getName();
 			if(isValidUser)
 			{
-				request.setAttribute("loginIn", u.getName());
+				request.setAttribute("loginIn", u.getId());
 				model=new ModelAndView("Success");
 			}
 			else
@@ -125,10 +129,19 @@ public class UserController {
 	 
 	 
 	 @RequestMapping("/Profile")
-	  public String  userProfile(Model m)
+	  public String Profilepage(@RequestParam("id") int  id,Model m ,@ModelAttribute("myprofile") User user)
 	  {
+		User u= userService.getUserById(id);
+		m.addAttribute("u",u);
+		
+			System.out.println("Profile page");
+			System.out.println(u.getName());
+			
+				return "Profile";
+		
+	  }
 		 
-		 User u=new User();
+		 /*User u=new User();
 	 System.out.println(u.getId());
 	
 		System.out.println(u.getName());
@@ -137,8 +150,8 @@ public class UserController {
 		 m.addAttribute("user1",u);
 		
 		  System.out.println("user1");
-		  return "Profile";
-	  }
+		  return "Profile";*/
+	  
 	 
 	 @RequestMapping(value="/edit/{id}", method=RequestMethod.POST)
 	  public String update(@PathVariable("id")int id ,@ModelAttribute("user1") User u,Model model)

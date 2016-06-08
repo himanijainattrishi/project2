@@ -76,9 +76,10 @@ text-align: right;
  
  <ul class="nav nav-tabs">
  <li class="active"><a href="index">HOME</a></li>
-  <li><a href="Profile">MY PROFILE</a></li>
+  <li><a href="Profile?id=${loginBean.id}">MY PROFILE</a></li>
   <li><a href="#">SIGN OUT</a></li>
-  <li><i><b>WELCOME ${loginBean.name}</i></b></li>
+  <li><i><b>WELCOME ${user.name}</i></b></li>
+  
 </ul>
  </div>
  </div>
