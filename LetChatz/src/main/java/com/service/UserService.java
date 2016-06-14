@@ -2,6 +2,7 @@ package com.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dao.UserDaoImp;
@@ -13,8 +14,17 @@ import com.model.User;
 
 @Service
 @Transactional
+@EnableTransactionManagement
 public class UserService {
+	
 	UserDaoImp user;
+
+	
+	
+
+	public UserDaoImp getUser() {
+		return user;
+	}
 
 	@Autowired
 	public UserService(UserDaoImp user) 
@@ -27,23 +37,33 @@ public class UserService {
 		this.user = user;
 	}
 	
-	@Transactional
+
 	public void addUser(User u) {  
 		System.out.println("service");
 		 user.addUser(u);
 		 } 
-	@Transactional
-	public Boolean logincheck(int id,String password)
+	
+	/*public Boolean logincheck(String name,String password)
 	{
-		return user.validUser(id, password);
+		return user.validUser(name, password);
 	}
-	
-	
+	*/
 	public User  getUserById(int id)
 	{
+		System.out.println(id);
 	return user.getUserById(id);
 	
 	}
-
+	public User  getUserByName(String name)
+	{
+	return user.getUserByName(name);
+	
+	}
+	public void updateUser(User u)
+	{
+		System.out.println("userservice method is" +u.getId());
+		user.updateUser(u);
+		
+	}
 
 }

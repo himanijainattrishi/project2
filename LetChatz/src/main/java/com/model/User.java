@@ -12,7 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
@@ -31,9 +33,18 @@ public class User implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
+	private boolean isActive=true;
+	public boolean isActive() {
+		return isActive;
+	}
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+	@NotEmpty(message="Name can not be blank")
 	private String name;
 	private String lastName;
 	private String email;
+	@Size(min=6,max=10)
 	private String password;
 	private int zipcode;
 	private String state;

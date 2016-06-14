@@ -2,12 +2,16 @@ package com.dao;
 
 import java.util.List;
 
+import javax.persistence.PersistenceContext;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.model.User;
 
@@ -15,19 +19,15 @@ import com.model.User;
 
 
 @Repository
+@PersistenceContext
 public class UserDaoImp implements UserDao {
-
+	
 private SessionFactory sessionFactory;  
 	
-	@Autowired
-	public UserDaoImp(SessionFactory sessionFactory) 
-	{
-		super();
-		this.sessionFactory = sessionFactory;
-		// TODO Auto-generated constructor stub
-	}
-	 
+
 	
+	 
+@Autowired
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
@@ -55,14 +55,14 @@ private SessionFactory sessionFactory;
 	}
 
 
-	public Boolean validUser(int id, String password) {
+	public Boolean validUser(String name, String password) {
 		boolean check=false;
-		
-	    Session s=sessionFactory.openSession();
+		/*Session s=sessionFactory.getCurrentSession();*/
+	Session s=sessionFactory.openSession();
 	    Transaction t=s.beginTransaction();
-	    Query q=s.createQuery("from User where id=? and password=?");
+	    Query q=s.createQuery("from User where name=? and password=?");
 	   
-	    q.setInteger(0,id);
+	    q.setString(0,name);
 	    q.setString(1, password);
 	    List list = q.list();
 	    if(list!=null && list.size()>0)
@@ -76,19 +76,55 @@ private SessionFactory sessionFactory;
 
 	public User getUserById(int id) {
 	
-		 Session s=sessionFactory.openSession();
-		    Transaction t=s.beginTransaction();
-			//Session session=sessionFactory.getCurrentSession();
-			User u=(User)s.get(User.class,new Integer(id));
-			System.out.println("user id is" +u);
+		Session s=sessionFactory.openSession();
+	    Transaction t=s.beginTransaction();
+		   User u=(User)s.get(User.class, id);
+		   System.out.println(u.getId());
+			t.commit();
+			s.close();
 			return u;
-			
+		/*System.out.println("Hello"+id);
+		return (User)sessionFactory.getCurrentSession().get(User.class, new Integer(id));
+		*/
 		}
 
 
 	public void updateUser(User user) {
-		
-		
+	Session s=sessionFactory.openSession();
+		    Transaction t=s.beginTransaction();
+		  
+		    /*System.out.println("before updation is"+user.getLastName());
+		   
+		    s.saveOrUpdate(user);
+		    System.out.println("after updation is"+user.getLastName());
+		    t.commit();*/
+		   User u=(User)s.get(User.class, new Integer(user.getId()));
+		   u.setName(user.getName());
+		   u.setLastName(user.getLastName());
+		   u.setCity(user.getCity());
+		   u.setMobile(user.getMobile());
+		   u.setEmail(user.getEmail());
+		   u.setGender(user.getGender());
+		   u.setZipcode(user.getZipcode());
+		   u.setImage(user.getImage());
+		   s.saveOrUpdate(u);
+		   s.flush();
+		   t.commit();
+		    s.close();
+		    System.out.println("after comit");
+			
+			
+	}
+
+
+	public User getUserByName(String name) {
+		 Session s=sessionFactory.openSession();
+		    Transaction t=s.beginTransaction();
+			//Session session=sessionFactory.getCurrentSession();
+			User u=(User)s.get(User.class,name);
+			System.out.println("user id is" +u.getId());
+			System.out.println("user id is" +u.getName());
+			return u;
 	}
 
 	}

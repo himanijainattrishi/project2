@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class AdminController {
 	
 	 @RequestMapping("/Admin")
-	  public ModelAndView contactus()
+	  public ModelAndView contactvus()
 	  {
 		 
 		  ModelAndView model=new ModelAndView("Admin");

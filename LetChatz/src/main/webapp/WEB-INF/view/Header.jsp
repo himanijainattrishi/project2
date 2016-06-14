@@ -1,14 +1,16 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@page isELIgnored="false"%>
 
 <html>
 <head>
 <title>HOME PAGE</title>
 <meta name="viewport content=" width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.min.css">  
-<link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" /> 
-<link
+ <link
 	href="https://cdnjs.cloudflare.com/ajax/libsl/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css"
 	rel="stylesheet" />
 
@@ -18,15 +20,21 @@
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
  
 <script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script> 
+	
   <script type="text/javascript">
   
-  $(function () {
+ /*  $(function () {
 	  $("#datepicker").datepicker({ 
 	        autoclose: true, 
 	        todayHighlight: true
 	  }).datepicker('update', new Date());;
 	});
+   */
+  function formSubmit()
+  {
+	  document.getElementById("logout").submit();
+  }
 
   
   
@@ -82,16 +90,16 @@ label
 	text-decoration: none;
 }
 
-  .header {
+ /*  .header {
         color: #36A0FF;
         font-size: 27px;
         padding: 10px;
-    }
+    } */
 
-    .bigicon {
+  /*   .bigicon {
         font-size: 35px;
         color: #36A0FF;
-    }
+    } */
  </style>
 
  </head>
@@ -111,26 +119,65 @@ label
             </button>
             <a href="index.html" class="navbar-brand">Letzchaaat</a>
         </div>
-        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-            <form class="navbar-form navbar-right" role="search">
+        
+        <c:url value="/perform_logout" var="logout"/>
+        <form action="${logout}"  method="post" id="logout">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csfr.token}"/>
+        
+        </form>
+        
+        
+        
+        
+        
+        
+       <!--  <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation"> -->
+           <%--  <form class="navbar-form navbar-right" role="search">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search">
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+            </form> --%>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="${session.getContextPath()}/LetChatz/index">Home</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="about.html">About US</a></li>
+                <li class="active"><a href="${session.getContextPath()}/LetChatz/index"> <span class="glyphicon glyphicon-home"></span>Home</a></li>
+                <li><a href="Contact"><span class="glyphicon glyphicon-phone"></span>CONTACT</a></li>
+                <c:if test="${pageContext.request.userPrincipal.name!=null}">
+               <font  color="green">welcome:${pageContext.request.userPrincipal.name}</font>
+             <li>  <a href="javascript:formSubmit()">LOGOUT</a></li>
+                <security:authentication var="user" property="principal.authorities"/>
+                <security:authorize var="LoggedIn" access="isAuthenticated()">
+                <security:authorize access="hasRole('ROLE_ADMIN')">
+               ADMIN
+                </security:authorize>
+                 <security:authorize access="hasRole('ROLE_USER')">
+                USER
+                </security:authorize>
+                </security:authorize>
+                </c:if>
+                <c:if test="${pageContext.request.userPrincipal.name==null}">
+                
+                 <ul class="nav navbar-nav navbar-right">
+      <li><a href="Login"><span class="glyphicon glyphicon-user"></span> LOGIN</a></li>
+      <li><a href="Register"><span class="glyphicon glyphicon-log-in"></span> NEW USER</a></li>
+    </ul>
+               <!--  <li><a href="Login">LOGIN</a></li>
+                <li><a href="Register">REGISTER</a></li> -->
+              </c:if>
+              
+               <c:if test="${pageContext.request.userPrincipal.name!=null}">
+                
+              
+            <%--   <a href="${pageContext.request.contextPath}/Success"> USER PROFILE</a> --%>
+          <a href="${pageContext.request.contextPath}/Success"> USER PROFILE</a>
+              </c:if> 
             </ul>
         </nav>
     </div>
 </header>
  
-  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
- 
- <script src="resource/bootstrap/js/bootstrap.min.js"></script> 
- <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script> 
+ <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="resources/bootstrap/js/bootstrap.min.js"></script> 
+<!--  <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>  -->
  </body>
  
  </html>

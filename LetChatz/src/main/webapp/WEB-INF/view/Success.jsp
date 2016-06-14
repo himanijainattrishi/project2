@@ -71,14 +71,18 @@ text-align: right;
  <div class="row">
  <div class="col-sm-4"><img src="resources/images/niitcloud.jpg" alt="...">
  </div>
+ 
+ 
+ 
  <div class="col-sm-2"></div>
  <div class="col-sm-6">
  
  <ul class="nav nav-tabs">
  <li class="active"><a href="index">HOME</a></li>
-  <li><a href="Profile?id=${loginBean.id}">MY PROFILE</a></li>
-  <li><a href="#">SIGN OUT</a></li>
-  <li><i><b>WELCOME ${user.name}</i></b></li>
+  <li><a href="Profile?id=${user.id}">MY PROFILE</a></li>
+ 
+  <li><font color="blue"><i><b>WELCOME ${user.name}</b></i></font></li>
+  
   
 </ul>
  </div>
@@ -100,7 +104,7 @@ text-align: right;
         <!--Collapse content-->
         <div class="collapse navbar-toggleable-xs" id="collapseEx2">
             <!--Navbar Brand-->
-            <a class="navbar-brand" href="#">HOME</a>
+            <a class="navbar-brand" href="index">HOME</a>
             <!--Links-->
             <ul class="nav navbar-nav">
                 <li class="nav-item active">
@@ -119,6 +123,13 @@ text-align: right;
             </ul>
            
         </div>
+        
+        
+        
+        
+        
+        
+        
         <!--/.Collapse content-->
 
     </div>
@@ -128,7 +139,8 @@ text-align: right;
 </div>
 
 <div class="row">
-		<div class="col-sm-4 col-md-3 sidebar">
+
+		<div class="col-sm-4 col-md-3 sidebar"> 
     <div class="mini-submenu">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -150,7 +162,7 @@ text-align: right;
         <a href="#" class="list-group-item">
             <i class="fa fa-user"></i> SCHEDULE
         </a>
-       <a href="#" class="list-group-item">
+       <a href="Chat" class="list-group-item">
             <i class="fa fa-user"></i> CHAT
         </a>
          <a href="#" class="list-group-item">
@@ -162,49 +174,30 @@ text-align: right;
 <div class="col-sm-8">
 
 
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
+<div class = "panel panel-default">
+   <div class = "panel-heading">SECHEDULE</div>
+   
+   <table class = "table">
+      <tr>
+         <th></th>
+         <th>Price </th>
+      </tr>
+      
+      <tr>
+         <td>Product A</td>
+         <td>200</td>
+      </tr>
+      
+      <tr>
+         <td>Product B</td>
+         <td>400</td>
+      </tr>
+   </table>
+   
 </div>
 </div>
- 
- </div>
-  
+
+
   
   
   

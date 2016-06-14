@@ -1,5 +1,6 @@
 package com.controller;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -31,13 +32,14 @@ public class HomeController
 		  ModelAndView model=new ModelAndView("Contact");
 		  return model;
 	  }
-	 @RequestMapping("/Success")
-	  public ModelAndView Success()
+	 @RequestMapping("/Chat")
+	  public ModelAndView chat()
 	  {
 		 
-		  ModelAndView model=new ModelAndView("Success");
+		  ModelAndView model=new ModelAndView("Chat");
 		  return model;
 	  }
+	
 	
 	
 }
