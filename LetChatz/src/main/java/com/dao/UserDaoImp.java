@@ -78,8 +78,9 @@ private SessionFactory sessionFactory;
 	
 		Session s=sessionFactory.openSession();
 	    Transaction t=s.beginTransaction();
-		   User u=(User)s.get(User.class, id);
+		   User u=(User)s.get(User.class, new Integer(id));
 		   System.out.println(u.getId());
+		   System.out.println(u.getName());
 			t.commit();
 			s.close();
 			return u;
@@ -120,9 +121,10 @@ private SessionFactory sessionFactory;
 	public User getUserByName(String name) {
 		 Session s=sessionFactory.openSession();
 		    Transaction t=s.beginTransaction();
+		    System.out.println("getuserbyname"+name);
 			//Session session=sessionFactory.getCurrentSession();
-			User u=(User)s.get(User.class,name);
-			System.out.println("user id is" +u.getId());
+			User u=(User)s.get(User.class,new String(name));
+			
 			System.out.println("user id is" +u.getName());
 			return u;
 	}

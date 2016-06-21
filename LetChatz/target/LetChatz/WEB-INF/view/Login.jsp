@@ -7,7 +7,7 @@
     <div class="row">
         <div class="form_bg">
           <%--   <form:form action="userLogin"  method="post"> --%>
-          <form:form action="perform_login" method="post">
+          <form:form action="perform" method="post" commandName="loginBean">
                  <h2 class="text-center">Login Page</h2>
                 <br/>
                 <div class="form-group">

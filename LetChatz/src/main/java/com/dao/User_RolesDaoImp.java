@@ -29,6 +29,7 @@ public void setsessionFactory(SessionFactory sessionFactory) {
 
 
 	public void addRole(User_Roles userrole) {
+		
 		sessionFactory.getCurrentSession().save(userrole);
 		
 		

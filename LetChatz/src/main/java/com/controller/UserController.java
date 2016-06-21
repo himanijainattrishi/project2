@@ -90,7 +90,7 @@ public class UserController {
 	    	   
 	}
 	
-	System.out.println("user login");
+	System.out.println("user register");
     return "redirect:/index";
 		
 	}
@@ -104,31 +104,50 @@ public class UserController {
 	  }	*/
 	    
 	 @RequestMapping(value="/Success")
-	  public String Success(Model m,@ModelAttribute("user") User u)
+	  public String Success(@ModelAttribute("loginBean") User u,Model m,HttpServletRequest request)
 	  {	
+		int id= (Integer)request.getAttribute("userid");
+		 u=userService.getUserById(id);
 		System.out.println("user id  is"+u.getId());
-		 m.addAttribute("user", userService.getUserById(1));
+		 m.addAttribute("user", u);
 		  return "Success";
 	  }	
 	    
 		
 		
-	/* @RequestMapping("/Login")
-	 public String Loginpage(Model m)
+	/*@RequestMapping("/Login")
+	 public String Loginpage(@RequestParam(value="error",required=false)String error,@RequestParam(value="logout",required=false)String logout,Model m)
 	  {
 		 
 		 
 		User u=new User();
+		 if (error!=null)
+		 {
+			 m.addAttribute("error","invalid user name");
+		 }
+		 if(logout!=null)
+		 {
+			 m.addAttribute("msg","u have loutout suucceful");
+		 }
+		 
 			
 			System.out.println("Login page");
-				m.addAttribute("loginBean", u);
-			
+				m.addAttribute("user", u);
+			System.out.println("return to success page");
+			User_Roles role=new User_Roles();
+			if(role.getUser_role()=="ROLE_ADMIN")
+			{
+				return "Admin";
+				
+			}
+			else
+			{
 				return "Login";
-		
+			}
 	  }*/
 	 
-	/* @RequestMapping(value="/userLogin", method=RequestMethod.POST)
-	 public ModelAndView processLogin(@ModelAttribute("loginBean") User user,Model m,@RequestParam("id") int id) {
+	/* @RequestMapping(value="/perform_login", method=RequestMethod.POST)
+	 public ModelAndView processLogin(@ModelAttribute("user") User user,Model m,@RequestParam("id") int id) {
 		 
 		 
 		 user=userService.getUserById(id);
@@ -159,16 +178,17 @@ public class UserController {
 			return mv;
 				
 			}
-	 }
+	 }*/
 			
 	 
 	 
-	 */
+	
 	 
 	 
-	 @RequestMapping(value="/Login")
+	/* @RequestMapping(value="/Login")
 	 public ModelAndView loginpage(@RequestParam(value="error",required=false)String error,@RequestParam(value="logout",required=false)String logout,Model m)
 	 {
+		 User u=new User();
 		 if (error!=null)
 		 {
 			 m.addAttribute("error","invalid user name");
@@ -177,26 +197,30 @@ public class UserController {
 		 {
 			 m.addAttribute("msg","u have loutout suucceful");
 		 }
+		 m.addAttribute("user",u);
+		 
+	
 		 return new ModelAndView("Login");
-	 }
-	 @RequestMapping(value="/Login",method=RequestMethod.POST)
+	 }*/
+	/* @RequestMapping(value="/perform_login",method=RequestMethod.POST)
 	 public String logincheck(@Valid @ModelAttribute("validate") User u,BindingResult result,Model model,@RequestParam("id") int id)
 	 {
 		 if(result.hasErrors())
 		 {
 			 return "Login";
 		 }
-		/* else
+		 else
 		 {
 			 
 		 System.out.println("user");
 		 
 		 u=userService.getUserById(id);
 		 model.addAttribute("user",u);
-		 }*/
+		 }
 		 return "index";
 	 }
 	 
+	 */
 	 
 	 
 	 
@@ -206,24 +230,27 @@ public class UserController {
 	 
 	 
 	 
-	 
-	/* @RequestMapping(value="/userLogin", method=RequestMethod.POST)
-	 public ModelAndView checkLogin(HttpServletRequest request,@RequestParam("id") int id,@ModelAttribute("loginBean") User u,Model m)
+		@RequestMapping(value="/perform", method=RequestMethod.POST)
+	 public ModelAndView checkLogin(@ModelAttribute("loginBean") User u,Model m,HttpServletRequest request)
 	 {
 		 ModelAndView model=null;
-		u=userService.getUserById(id);
-		m.addAttribute("user", u);
+		
+		 System.out.println("user name is" +u.getName());
+		/*u=userService.getUserByName(u.getName());*/
+		
 		 try
 		 {
 			boolean isValidUser=userService.logincheck(u.getName(),u.getPassword());
-				boolean isValidUser=userService.logincheck(u.getId(),u.getPassword());
+				
 			System.out.println(u.getName());
 			System.out.println(u.getPassword());
 			u.getName();
 			if(isValidUser)
 			{
-				request.setAttribute("loginIn", u.getId());
+				request.setAttribute("loginIn", u.getName());
+				request.setAttribute("userid", u.getId());
 				model=new ModelAndView("Success");
+				m.addAttribute("user", u);
 			}
 			else
 			{
@@ -235,9 +262,10 @@ public class UserController {
 		 {
 			 e.printStackTrace();
 		 }
+		 System.out.println("mdoel valueis "+model);
 		 return model;
 	 }
-	 */
+	
 	 
 	 @RequestMapping("/Profile")
 	  public String Profilepage(@RequestParam("id") int id,Model m)
@@ -269,6 +297,23 @@ public class UserController {
 		/*map.put("user",u);*/
 		  return "redirect:/index";
 	  }
+	 
+	 @RequestMapping(value= "/Login")
+ public String displayLogin(Model model)
+	
+	     {
+	System.out.println("display login page");
+	       //  ModelAndView model = new ModelAndView("Login");
+	
+	         User loginBean = new User();
+	model.addAttribute("loginBean", loginBean);
+	        // model.addObject("loginBean", loginBean);
+	
+	         return "Login";
+	
+	     }
+	 
+
 	 
 	 
 	 

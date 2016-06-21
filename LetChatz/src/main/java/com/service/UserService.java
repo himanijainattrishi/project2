@@ -43,11 +43,11 @@ public class UserService {
 		 user.addUser(u);
 		 } 
 	
-	/*public Boolean logincheck(String name,String password)
+	public Boolean logincheck(String name,String password)
 	{
 		return user.validUser(name, password);
 	}
-	*/
+	
 	public User  getUserById(int id)
 	{
 		System.out.println(id);
@@ -56,6 +56,7 @@ public class UserService {
 	}
 	public User  getUserByName(String name)
 	{
+		System.out.println("service method" +name);
 	return user.getUserByName(name);
 	
 	}

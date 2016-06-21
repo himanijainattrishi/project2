@@ -78,10 +78,12 @@ text-align: right;
  <div class="col-sm-6">
  
  <ul class="nav nav-tabs">
- <li class="active"><a href="index">HOME</a></li>
-  <li><a href="Profile?id=${user.id}">MY PROFILE</a></li>
+  <li class="active"><a href="index">HOME</a></li>
+  <li><a href="Profile?id=${user.name}">MY PROFILE</a></li> 
  
-  <li><font color="blue"><i><b>WELCOME ${user.name}</b></i></font></li>
+ WELCOME${loginIn}
+ ${userid}
+ <%--  <li><font color="blue"><i><b>WELCOME ${user.name}</b></i></font></li> --%>
   
   
 </ul>
@@ -159,8 +161,8 @@ text-align: right;
         <a href="#" class="list-group-item">
             <i class="fa fa-search"></i> ONLINE ASSESSMENT
         </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-user"></i> SCHEDULE
+        <a href="Blog" class="list-group-item">
+            <i class="fa fa-user"></i>BLOG
         </a>
        <a href="Chat" class="list-group-item">
             <i class="fa fa-user"></i> CHAT

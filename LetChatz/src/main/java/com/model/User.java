@@ -30,6 +30,7 @@ public class User implements Serializable {
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -127,6 +128,14 @@ public class User implements Serializable {
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", isActive=" + isActive + ", name=" + name
+				+ ", lastName=" + lastName + ", email=" + email + ", password="
+				+ password + ", zipcode=" + zipcode + ", state=" + state
+				+ ", mobile=" + mobile + ", dob=" + dob + ", gender=" + gender
+				+ ", image=" + image + ", city=" + city + "]";
 	}
 }
 	

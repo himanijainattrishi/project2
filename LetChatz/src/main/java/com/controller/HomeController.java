@@ -9,6 +9,10 @@ public class HomeController
 {
 	
 	
+	
+	
+	
+	
 	@RequestMapping(value={"/","/index"})
 	  public ModelAndView HomePage()
 	  {
@@ -16,27 +20,13 @@ public class HomeController
 		  ModelAndView model=new ModelAndView("index");
 		  return model;
 	  }
-	/* @RequestMapping("/index")
-	  public ModelAndView index()
-	  {
-		 
-		  ModelAndView model=new ModelAndView("index");
-		  return model;
-	  }
-	*/
+	
 	
 	 @RequestMapping("/Contact")
 	  public ModelAndView contactus()
 	  {
 		 
 		  ModelAndView model=new ModelAndView("Contact");
-		  return model;
-	  }
-	 @RequestMapping("/Chat")
-	  public ModelAndView chat()
-	  {
-		 
-		  ModelAndView model=new ModelAndView("Chat");
 		  return model;
 	  }
 	

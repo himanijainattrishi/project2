@@ -4,16 +4,16 @@
 
    
  <div class="container">
-  <form:form action="editValue/${u.id}" class="form-horizontal well"   method="post" commandName="u">
+  <form:form action="edit/${u.id}" class="form-horizontal well"  method="POST" commandName="u">
     <h1>Edit Profile</h1>
   	<hr>
 	<div class="row">
       <!-- left column -->
       <div class="col-md-4">
         <div class="text-center">
-          <img src="resources/pics/${u.id}.jpg" class="avatar img-circle" alt="avatar">
+        <%--  <img src="resources/pics/${u.id}.jpg" class="avatar img-circle" alt="avatar">
           <h6>Upload a different photo...</h6>
-          <form:input type="file" path="image"  class="form-control"/>
+          <form:input type="file" path="image"  class="form-control"/>  --%>
          
     <%-- <img src="resources/pics/${u.id}.jpg" class=".img-circle" height="300" width="300"/> --%>
          
@@ -36,7 +36,7 @@
         <div class="form-group">
             <label class="col-lg-3 control-label">ID:</label>
             <div class="col-lg-8">
-              <form:input class="form-control" path="id"  readonly="true"/>
+              <form:input class="form-control" path="id"  value="${u.id}" readonly="true"/>
             </div>
           </div>
           <div class="form-group">

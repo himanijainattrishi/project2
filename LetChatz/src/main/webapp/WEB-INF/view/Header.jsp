@@ -139,9 +139,10 @@ label
               <button type="submit" class="btn btn-default">Submit</button>
             </form> --%>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="${session.getContextPath()}/LetChatz/index"> <span class="glyphicon glyphicon-home"></span>Home</a></li>
+             <li class="active"><a href="index"> <span class="glyphicon glyphicon-home"></span>HOME</a></li>
+               <%--  <li class="active"><a href="${session.getContextPath()}/LetChatz/index"> <span class="glyphicon glyphicon-home"></span>HOME</a></li> --%>
                 <li><a href="Contact"><span class="glyphicon glyphicon-phone"></span>CONTACT</a></li>
-                <c:if test="${pageContext.request.userPrincipal.name!=null}">
+              <%--   <c:if test="${pageContext.request.userPrincipal.name!=null}">
                <font  color="green">welcome:${pageContext.request.userPrincipal.name}</font>
              <li>  <a href="javascript:formSubmit()">LOGOUT</a></li>
                 <security:authentication var="user" property="principal.authorities"/>
@@ -153,8 +154,8 @@ label
                 USER
                 </security:authorize>
                 </security:authorize>
-                </c:if>
-                <c:if test="${pageContext.request.userPrincipal.name==null}">
+                </c:if> --%>
+               <%--  <c:if test="${pageContext.request.userPrincipal.name==null}"> --%>
                 
                  <ul class="nav navbar-nav navbar-right">
       <li><a href="Login"><span class="glyphicon glyphicon-user"></span> LOGIN</a></li>
@@ -162,14 +163,15 @@ label
     </ul>
                <!--  <li><a href="Login">LOGIN</a></li>
                 <li><a href="Register">REGISTER</a></li> -->
-              </c:if>
+            <%--   </c:if> --%>
               
-               <c:if test="${pageContext.request.userPrincipal.name!=null}">
+             <%--   <c:if test="${pageContext.request.userPrincipal.name!=null}">
                 
               
-            <%--   <a href="${pageContext.request.contextPath}/Success"> USER PROFILE</a> --%>
+              <a href="${pageContext.request.contextPath}/Success"> USER PROFILE</a>
           <a href="${pageContext.request.contextPath}/Success"> USER PROFILE</a>
-              </c:if> 
+           
+              </c:if>  --%>
             </ul>
         </nav>
     </div>
