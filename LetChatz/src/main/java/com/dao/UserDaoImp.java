@@ -4,11 +4,12 @@ import java.util.List;
 
 import javax.persistence.PersistenceContext;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -55,9 +56,9 @@ private SessionFactory sessionFactory;
 	}
 
 
-	public Boolean validUser(String name, String password) {
+	/*public Boolean validUser(String name, String password) {
 		boolean check=false;
-		/*Session s=sessionFactory.getCurrentSession();*/
+		Session s=sessionFactory.getCurrentSession();
 	Session s=sessionFactory.openSession();
 	    Transaction t=s.beginTransaction();
 	    Query q=s.createQuery("from User where name=? and password=?");
@@ -71,7 +72,7 @@ private SessionFactory sessionFactory;
 	    }
 	    return check;
 	
-	}
+	}*/
 
 
 	public User getUserById(int id) {
@@ -118,16 +119,41 @@ private SessionFactory sessionFactory;
 	}
 
 
-	public User getUserByName(String name) {
-		 Session s=sessionFactory.openSession();
-		    Transaction t=s.beginTransaction();
-		    System.out.println("getuserbyname"+name);
-			//Session session=sessionFactory.getCurrentSession();
-			User u=(User)s.get(User.class,new String(name));
+	
 			
-			System.out.println("user id is" +u.getName());
-			return u;
+			
+	
+public List<User> getAllUsers() {
+	Session s=sessionFactory.openSession();
+    Transaction t=s.beginTransaction();
+   
+		return s.createQuery("from User").list();
 	}
+public void removeproduct(int productId) {
+	Session session=sessionFactory.getCurrentSession();
+
+	// tx = session.beginTransaction();
+	User p=(User)session.get(User.class,new Integer(productId));
+	 System.out.print("remove dao start");
+	 System.out.println("");
+	 System.out.println("");
+	 System.out.println(productId);
+	 session.delete(p);
+
+	 
+
+	
+}
+public Boolean validUser(String name, String password) {
+	// TODO Auto-generated method stub
+	return null;
+}
+public User getUserByName(String name) {
+	Criteria c=sessionFactory.getCurrentSession().createCriteria(User.class);
+	c.add(Restrictions.like("name", name));
+	return (User)c.uniqueResult();
+}
+
 
 	}
 

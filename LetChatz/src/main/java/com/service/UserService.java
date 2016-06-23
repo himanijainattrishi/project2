@@ -1,5 +1,7 @@
 package com.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -66,5 +68,17 @@ public class UserService {
 		user.updateUser(u);
 		
 	}
+public List<User> getAllUsers() {
+		
+		return user.getAllUsers();
+	}
+
+public void removeproduct(int id)
+{
+	System.out.println("remove service start");
+	this.user.removeproduct(id);
+	System.out.println("remove service end");
+}
+
 
 }

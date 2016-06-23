@@ -1,10 +1,13 @@
 <%@include file="Header.jsp"%>
 <div class="container">
-
+<div>
+ 
 <div class="well">
 <form:form action="useradd1" class="form-horizontal well" enctype="multipart/form-data" method="post" commandName="user">
 
  <fieldset>
+ <span style="color: #ff0000">${emailMsg}</span>
+  <span style="color: #ff0000">${usernameMsg}</span>
     <legend>Register Now</legend>
     
     <div class="row">
@@ -16,7 +19,7 @@
                             <div class="col-lg-6">
                                NAME <form:input class="form-control input-lg" 
 
-path="name"/>
+path="name"/> 
 </div>
 <div class="col-lg-6">
                              LAST NAME   <form:input class="form-control 
@@ -45,7 +48,7 @@ input-lg" path="password"/>
                             <div class="col-lg-12">
                             EMAIL-ID <form:input class="form-control input-
 
-lg" path="email"/>
+lg" path="email"/>  <form:errors path="email" cssClass="error" />
                             </div>
                         </div>
                     </div>
@@ -153,6 +156,7 @@ type="submit">Register</button>
                                  <button class="btn btn-danger" 
 
 type="reset">Reset</button>
+
                             </div>
      
                         </div>

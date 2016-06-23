@@ -79,10 +79,10 @@ text-align: right;
  
  <ul class="nav nav-tabs">
   <li class="active"><a href="index">HOME</a></li>
-  <li><a href="Profile?id=${user.name}">MY PROFILE</a></li> 
- 
- WELCOME${loginIn}
- ${userid}
+ <!--  <li><a href="Profile?id">MY PROFILE</a></li>  --> 
+<li><a href="Profile">MY PROFILE</a></li>  
+ WELCOME${myName}
+
  <%--  <li><font color="blue"><i><b>WELCOME ${user.name}</b></i></font></li> --%>
   
   
@@ -155,14 +155,14 @@ text-align: right;
                 <i class="fa fa-times"></i>
             </span>
         </span>
-        <a href="CloudCourse" class="list-group-item">
+        <a href="angular" class="list-group-item">
             <i class="glyphicon glyphicon-cloud"></i>CLOUD COURSEWARE
         </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-search"></i> ONLINE ASSESSMENT
+        <a href="ViewBlog" class="list-group-item">
+            <i class="fa fa-search"></i> VIEW ALL BLOG
         </a>
         <a href="Blog" class="list-group-item">
-            <i class="fa fa-user"></i>BLOG
+            <i class="fa fa-user"></i>CREATE NEW BLOG
         </a>
        <a href="Chat" class="list-group-item">
             <i class="fa fa-user"></i> CHAT

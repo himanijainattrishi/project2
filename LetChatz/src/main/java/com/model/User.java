@@ -41,11 +41,13 @@ public class User implements Serializable {
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
-	@NotEmpty(message="Name can not be blank")
+	@NotEmpty
+	@Size(min=2, max=20)
 	private String name;
 	private String lastName;
 	private String email;
-	@Size(min=6,max=10)
+	@NotEmpty
+	@Size(min=4,max=20)
 	private String password;
 	private int zipcode;
 	private String state;

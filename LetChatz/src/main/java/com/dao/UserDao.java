@@ -12,4 +12,7 @@ public interface UserDao {
 	public User getUserById(int id);
 	public void updateUser(User user);
 	public User getUserByName(String name);
+	public List<User> getAllUsers();
+	
+	public 	void removeproduct(int productId);
 }

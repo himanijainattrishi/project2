@@ -4,7 +4,7 @@
 
    
  <div class="container">
-  <form:form action="edit/${u.id}" class="form-horizontal well"  method="POST" commandName="u">
+  <form:form action="edit/${u.id}" class="form-horizontal well" commandName="u">
     <h1>Edit Profile</h1>
   	<hr>
 	<div class="row">

@@ -26,7 +26,7 @@
 			<list>
 				<value>com.model.User</value>
 				<value>com.model.User_Roles</value>
-					
+					<value>com.model.Blog</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -49,7 +49,9 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
-	
+	<bean id="blog" class="com.dao.BlogDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
  
 
 	 <bean id="userService" class="com.service.UserService">
@@ -58,6 +60,9 @@
 	
 	<bean id="roleservice" class="com.service.User_RolesServiceImp">
 		<property name="dao" ref="dao"></property>
+	</bean> 
+	<bean id="blogservice" class="com.service.BlogService">
+		<property name="blog" ref="blog"></property>
 	</bean> 
 	
 
