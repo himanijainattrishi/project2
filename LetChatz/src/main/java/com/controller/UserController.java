@@ -142,7 +142,7 @@ for (int i=0; i< userList.size(); i++){
 		 }
 		 if(logout!=null)
 		 {
-			 m.addAttribute("msg","u have loutout suucceful");
+			 m.addAttribute("msg","Logout");
 		 }
 		/* m.addAttribute("user",u);*/
 		 

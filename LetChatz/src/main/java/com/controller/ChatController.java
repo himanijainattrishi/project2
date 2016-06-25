@@ -1,5 +1,6 @@
 package com.controller;
 
+import java.security.Principal;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,8 +36,10 @@ public class ChatController {
     
     
     @RequestMapping(value={"/Chat"})
-    public String openChat()
+    public String openChat(Principal p,Model m)
     {
+    	String user=p.getName();
+    	m.addAttribute("user",user);
     	return "Chat";
     }
    

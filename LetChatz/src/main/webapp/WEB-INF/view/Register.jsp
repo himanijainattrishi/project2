@@ -2,7 +2,7 @@
 <div class="container">
 <div>
  
-<div class="well">
+<div class="well" id="form-all">
 <form:form action="useradd1" class="form-horizontal well" enctype="multipart/form-data" method="post" commandName="user">
 
  <fieldset>
@@ -11,6 +11,7 @@
     <legend>Register Now</legend>
     
     <div class="row">
+  
  
                     <div class="col-xs-8">
                     <div class="form-group">
@@ -167,8 +168,9 @@ type="reset">Reset</button>
  
                 </div> 
 
-                    
+            
     </fieldset>
 </form:form>
+
 </div>
 </div>

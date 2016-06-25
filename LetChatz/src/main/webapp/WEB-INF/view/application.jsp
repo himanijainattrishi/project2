@@ -13,6 +13,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/chat.window.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/comet.chat.js"></script>
 <script type="text/javascript">
+
+
     
     var chatWindowArray = [];
     
@@ -64,6 +66,13 @@
 	}
 </script>
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/comet.chat.css"/>
+<style>
+body
+{  background: lightblue;
+   color:blue; 
+}
+</style>
+
 </head>
 <body>
 <script type="text/javascript">
@@ -74,5 +83,25 @@
 	});
 </script>
 <div id="members"></div>
+
+
+ 
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

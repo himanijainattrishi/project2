@@ -1,4 +1,5 @@
 <!doctype html>
+ <%@include file="Header.jsp" %>
 <html>
    
    <head>
@@ -22,11 +23,12 @@ var app=angular.module("searchApp",[]).controller("TableCtrl",function($scope)
    
    <body>
     
-   
+   <br><br><br><br><br><br><br><br>
  <div  ng-app="searchApp">
-	 <div ng-controller="TableCtrl">
-	 <table class ="table table-bordered">
- 	<thead>
+	 <div ng-controller="TableCtrl" style="padding-left:300px;width:1000px; ">
+	
+	<table class="table table-bordered span5 center-table"> 
+ 	<thead class="thead-inverse">
  	<tr>
  	<th>Id</th>
  	<th>TITLE</th>
@@ -41,7 +43,7 @@ var app=angular.module("searchApp",[]).controller("TableCtrl",function($scope)
  <td>{{ p.blogid }}</td>
     <td>{{ p.title }}</td>
     <td>{{p.content}}</td>
-     <td>{{4+3}}</td>
+    
    </tr>
    </tbody>
    </table>

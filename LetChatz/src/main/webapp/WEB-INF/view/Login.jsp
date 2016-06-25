@@ -33,7 +33,7 @@
                 <br/>
                 <div class="align-center">
             
-                  <input type="submit" class="btn btn-default" id="login">Login
+                  <input type="submit" class="btn btn-default" id="login">
                 </div>
                 <li>New User ?<a href="signUp">Sign Up Here</a></li>
 <li><input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/></li>
@@ -42,4 +42,3 @@
     </div>
 </div>
 </section>
-<%@include file="Footer.jsp"%>

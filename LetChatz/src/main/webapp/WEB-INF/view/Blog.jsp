@@ -1,6 +1,7 @@
 <%@include file="Header.jsp"%>
 
-
+<br><br><br>
+<br><br><br>
 <html>
    
    <head>
@@ -25,7 +26,7 @@ var app=angular.module("searchApp",[]).controller("TableCtrl",function($scope)
 
 <body>
  
-	{{5+4}}
+	
 <div class="container">
     <div class="row">
         <form role="form">
@@ -43,7 +44,7 @@ var app=angular.module("searchApp",[]).controller("TableCtrl",function($scope)
                 <div class="form-group">
                     <label for="InputMessage">BLOG POST CONTENT</label>
                     <div class="input-group">
-                        <textarea name="content" id="content" class="form-control" rows="5" required></textarea>
+                        <textarea name="content" id="content1" class="form-control" rows="5" required></textarea>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
@@ -51,46 +52,13 @@ var app=angular.module("searchApp",[]).controller("TableCtrl",function($scope)
                 <input type="submit" name="submit" id="submit" value="Publish" class="btn btn-info pull-right">
                
             </div>
+            </form></div>
+            </div>
+          
         </form:form>
-        <div class="col-lg-5 col-md-push-1">
-            <div class="col-md-12">
-          <div class="well well-sm"><strong>BLOG INFO</strong></div>
-               <!--  <div class="alert alert-success">
-                    <strong><span class="glyphicon glyphicon-ok"></span> Success! Message sent.</strong>
-                </div> -->
-                
-               </div> 	
-	 	
-	
-	<div  ng-app="searchApp">
-	 <div ng-controller="TableCtrl">
- 	<table class ="table table-bordered">
- 	<thead>
- 	<tr>
- 	<th>Id</th>
- 	<th>TITLE</th>
- 	<th>CONTENT</th>
- 	
- </tr>
- 	</thead>
- 		<tbody>
- 	
-    
-   <tr  ng-repeat="p in prod">
- <td>{{p.blogid}}</td>
-    <td>{{ p.title }}</td>
-    <td>{{p.content}}</td>
-     <td>{{4+3}}</td>
-   </tr>
-   </tbody>
-   </table>
+       
    
-         </div>       
-             </div>
-                
-                </div>
-                
-              
+             
            
              
          

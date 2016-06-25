@@ -1,212 +1,85 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@page isELIgnored="false" %>
-<html>
-<head>
-<title>HOME PAGE</title>
-<meta name="viewport content=" width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.min.css">  
-<link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" /> 
-<link
-	href="https://cdnjs.cloudflare.com/ajax/libsl/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css"
-	rel="stylesheet" />
+<%@include file="Header.jsp"%>
 
-<link
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css"
-	rel="stylesheet" />
-	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
- 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <div id="body">
+
+		
+
+		<section id="content">
+
+	    <article>
+				
+			
 	
 	
-	 <style>
-	 
-	body {
-  padding : 10px ;
-  background-color: lightblue;
-   /* background-image: url("resources/images/blue1.jpg"); */
-}
+		
+		
+		
+		
+		
+			<!-- <div class="article-info">Posted on <time datetime="2013-05-14">14 May</time> by <a href="#" rel="author">Joe Bloggs</a></div>
 
-#exTab1 .tab-content {
-  color : black;
-  background-color: #428bca;
-  padding : 5px 15px;
-}
+            <p>Welcome to spigot, a free premium valid CSS3 &amp; HTML5 web template from <a href="http://zypopwebtemplates.com/" title="ZyPOP">ZyPOP</a>. This template is completely <strong>free</strong> to use permitting a link remains back to  <a href="http://zypopwebtemplates.com/" title="ZyPOP">http://zypopwebtemplates.com/</a>. Should you wish to use this template unbranded you can buy a template license from our website for 8.00 GBP, this will allow you remove all branding related to our site, for more information about this see below.</p>	
+            
+            <p>This template has been tested in:</p>
 
 
-
-
-/* remove border radius for the tab */
-
-#exTab1 .nav-pills > li > a {
-  border-radius: 0;
-}
-
-/* change border radius for the tab , apply corners on top*/
-
-
-section {
-    width:350px;
-    float:left;
-    padding:10px; 
-}
-
-navbar
-{
-text-align: right;
-}
-.carousel .item {
-  height: 300px;
-}
-
-
-	
-
-	 
-	 </style>
-	</head>
- <body>
- <div class="container">
- <div class="row">
- <div class="col-sm-4"><img src="resources/images/niitcloud.jpg" alt="...">
- </div>
- 
- 
- 
- <div class="col-sm-2"></div>
- <div class="col-sm-6">
- 
- <ul class="nav nav-tabs">
-  <li class="active"><a href="index">HOME</a></li>
- <!--  <li><a href="Profile?id">MY PROFILE</a></li>  --> 
-<li><a href="Profile">MY PROFILE</a></li>  
- WELCOME${myName}
-
- <%--  <li><font color="blue"><i><b>WELCOME ${user.name}</b></i></font></li> --%>
-  
-  
-</ul>
- </div>
- </div>
- 
-
-<div class="row">
-<div class="col-sm-12">
-
-<nav class="navbar navbar-dark bg-primary">
-
-    <!-- Collapse button-->
-    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx2">
-        <i class="fa fa-bars"></i>
-    </button>
-
-    <div class="container">
-
-        <!--Collapse content-->
-        <div class="collapse navbar-toggleable-xs" id="collapseEx2">
-            <!--Navbar Brand-->
-            <a class="navbar-brand" href="index">HOME</a>
-            <!--Links-->
-            <ul class="nav navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">STUDENT SERVICES <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">BULLETIN BOARD</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">PERFORMANCE</a>
-                </li>
-                
-                
-                
-               
+            <ul class="styledlist">
+                <li>Firefox</li>
+                <li>Opera</li>
+                <li>IE</li>
+ 		<li>Safari</li>
+                <li>Chrome</li>
             </ul>
-           
-        </div>
-        
-        
-        
-        
-        
-        
-        
-        <!--/.Collapse content-->
 
+	
+
+
+		
+		</article>
+	
+		<article class="expanded">
+
+            		<h2>Buy unbranded</h2>
+			<div class="article-info">Posted on <time datetime="2013-05-14">14 May</time> by <a href="#" rel="author">Joe Bloggs</a></div>
+
+			
+            <p>Purchasing a template license for 8.00 GBP (at time of writing around 12 USD) gives you the right to remove any branding including links, logos and source tags relating to ZyPOP. As well as waiving the attribution requirement, your payment will also help us provide continued support for users as well as creating new web templates. Find out more about how to buy at the licensing page on our website which can be accessed at <a href="http://zypopwebtemplates.com/licensing" title="template license">http://zypopwebtemplates.com/licensing</a></p>
+
+<h3>Lorem lipsum</h3>
+
+<p>Morbi fermentum condimentum felis, commodo vestibulum sem mattis sed. Aliquam magna ante, mollis vitae tincidunt in, malesuada vitae turpis. Sed aliquam libero ut velit bibendum consectetur. Quisque sagittis, est in laoreet semper, enim dui consequat felis, faucibus ornare urna velit nec leo. Maecenas condimentum velit vitae est lobortis fermentum. In tristique sem vitae metus ornare luctus tempus nisl volutpat. Integer et est id nisi tempus pharetra sagittis et libero.</p>
+
+
+		<a href="#" class="button">Read more</a>
+		<a href="#" class="button">Comments</a>
+		</article>-->
+        </section> 
+
+   <aside class="sidebar">
+
+           <ul>	
+               <li>
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="index.html">Home Page</a></li>
+                        <li><a href="Profile">My Profile</a></li>
+                        <li><a href="Blog">Create New Blog</a></li>
+                        <li><a href="ViewBlog">View All Blog</a></li>
+                        <li><a href="angular">View Own Blog</a></li>
+                         <li><a href="Chat">Chat</a></li>
+                    </ul>
+                </li>
+                
+             
+		
+        </aside>
+    		<marquee><font color="green">Highest CTC for the year is  5.5 lac. 1.5 lac students place in this year   Some Top recuriters are TCS|WIPRO|HCL|TECH MAHINDRA </font></marquee>
     </div>
-
-</nav>
-</div>
-</div>
-
-<div class="row">
-
-		<div class="col-sm-4 col-md-3 sidebar"> 
-    <div class="mini-submenu">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </div>
-    <div class="list-group">
-        <span href="#" class="list-group-item active">
-      SERVICES
-            <span class="pull-right" id="slide-submenu">
-                <i class="fa fa-times"></i>
-            </span>
-        </span>
-        <a href="angular" class="list-group-item">
-            <i class="glyphicon glyphicon-cloud"></i>CLOUD COURSEWARE
-        </a>
-        <a href="ViewBlog" class="list-group-item">
-            <i class="fa fa-search"></i> VIEW ALL BLOG
-        </a>
-        <a href="Blog" class="list-group-item">
-            <i class="fa fa-user"></i>CREATE NEW BLOG
-        </a>
-       <a href="Chat" class="list-group-item">
-            <i class="fa fa-user"></i> CHAT
-        </a>
-         <a href="#" class="list-group-item">
-            <i class="fa fa-user"></i> SERVICES
-        </a>
-    </div>        
-</div>
-
-<div class="col-sm-8">
-
-
-<div class = "panel panel-default">
-   <div class = "panel-heading">SECHEDULE</div>
-   
-   <table class = "table">
-      <tr>
-         <th></th>
-         <th>Price </th>
-      </tr>
-      
-      <tr>
-         <td>Product A</td>
-         <td>200</td>
-      </tr>
-      
-      <tr>
-         <td>Product B</td>
-         <td>400</td>
-      </tr>
-   </table>
-   
-</div>
-</div>
-
-
-  
-  
-  
- 
-  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
- 
- <script src="resource/bootstrap/js/bootstrap.min.js"></script> 
- </body>
- </html>
- 
