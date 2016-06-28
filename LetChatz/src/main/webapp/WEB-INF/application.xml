@@ -27,6 +27,7 @@
 				<value>com.model.User</value>
 				<value>com.model.User_Roles</value>
 					<value>com.model.Blog</value>
+						<value>com.model.Contact</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

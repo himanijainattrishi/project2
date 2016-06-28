@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dao.UserDaoImp;
+import com.model.Contact;
 import com.model.User;
 
 
@@ -44,6 +45,11 @@ public class UserService {
 		System.out.println("service");
 		 user.addUser(u);
 		 } 
+	public void addCustomer(Contact c) {  
+		System.out.println("service");
+		 user.addCustomer(c);
+		 } 
+	
 	
 	public Boolean logincheck(String name,String password)
 	{
@@ -72,6 +78,10 @@ public List<User> getAllUsers() {
 		
 		return user.getAllUsers();
 	}
+public List<Contact> getAllCustomer() {
+	
+	return user.getAllCustomer();
+}
 
 public void removeproduct(int id)
 {
@@ -79,6 +89,11 @@ public void removeproduct(int id)
 	this.user.removeproduct(id);
 	System.out.println("remove service end");
 }
-
+public void removecontact(int id)
+{
+	System.out.println("remove service start");
+	this.user.removecontact(id);
+	System.out.println("remove service end");
+}
 
 }

@@ -1,5 +1,6 @@
 <!doctype html>
  <%@include file="Header.jsp" %>
+ <img class="img-responsive" src="resources/images/niitcloud.jpg" alt="event-image">
 <html>
    
    <head>
@@ -23,7 +24,7 @@ var app=angular.module("searchApp",[]).controller("TableCtrl",function($scope)
    
    <body>
     
-   <br><br><br><br><br><br><br><br>
+
  <div  ng-app="searchApp">
 	 <div ng-controller="TableCtrl" style="padding-left:300px;width:1000px; ">
 	

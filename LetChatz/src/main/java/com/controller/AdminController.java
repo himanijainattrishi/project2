@@ -25,9 +25,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.model.User;
+import com.model.User_Roles;
 import com.service.BlogService;
 import com.service.UserService;
 import com.model.Blog;
+import com.model.Contact;
 import com.google.gson.Gson;
 @Controller
 public class AdminController {
@@ -38,8 +40,26 @@ public class AdminController {
 	BlogService blogservice;
 	
 	 @RequestMapping("/Admin")
-	  public ModelAndView Admin()
-	  {
+	  public ModelAndView Admin(Model m)
+	  {int user=0,blog=0,message=0;
+	List<User> l=userService.getAllUsers();
+	List<Contact>c=userService.getAllCustomer();
+	List<Blog>b=blogservice.getAllBlog();
+	for(Object o:l)
+	{
+		user++;
+	}
+	for(Object o1:b)
+	{
+		blog++;
+	}
+	for(Object o2:c)
+	{
+		message++;
+	}
+	m.addAttribute("user",user);
+	m.addAttribute("blog",blog);
+	m.addAttribute("message",message);
 		 
 		  ModelAndView model=new ModelAndView("Admin");
 		  return model;
@@ -111,12 +131,19 @@ public class AdminController {
 	 
 	 
 	 @RequestMapping("/ViewBlog")
-	  public String viewBlog(Model m)
+	  public ModelAndView viewBlog(Model m)
 	  {
-		List<Blog>l= blogservice.getAllBlog();
+		/*List<Blog>l= blogservice.getAllBlog();
 		
 		 m.addAttribute("blog",l);
-		  return "ViewBlog";
+		  return "ViewBlog";*/
+	 Gson gson=new Gson();
+		 
+		 List<Blog>l= blogservice.getAllBlog();
+		 String json=gson.toJson(l);
+		 ModelAndView model=new ModelAndView("ViewBlog");
+		 model.addObject("blog",json);
+		  return model;
 	  }
 	 
 	 
@@ -132,6 +159,47 @@ public class AdminController {
 	     System.out.println("id remove is"+id);
 	       return "redirect:/AllUser";
 	   }
+	 @RequestMapping("/delete/{id}")
+	   public String removecontact(@PathVariable("id") int id){
+	        
+	     userService.removecontact(id);
+	     System.out.println("id remove is"+id);
+	       return "redirect:/viewContact";
+	   }
+	 
+	 
+	 @RequestMapping(value= "/Contact")
+	 public String ContactUs(Model m)
+		{
+		
+			Contact u=new Contact();
+		
+		System.out.println("Contact");
+			m.addAttribute("user", u);
+			 return "Contact";
+		}
+	 
+	 
+	 @RequestMapping(value="/Contact", method=RequestMethod.POST)
+		public String addCustomer( @ModelAttribute("user") Contact u,HttpServletRequest request,Model model)
+			{
+		userService.addCustomer(u);
+		
+			
+	    return "redirect:/index";
+			
+		}
+	 @RequestMapping("/viewContact")
+	  public String viewContact(Model m)
+	  {
+		List<Contact>l= userService.getAllCustomer();
+		
+		 m.addAttribute("customer",l);
+		  return "viewContact";
+	  }
+	 
+			
+
 	 
 	 
 	

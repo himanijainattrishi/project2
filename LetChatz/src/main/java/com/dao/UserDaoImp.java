@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.model.Contact;
 import com.model.User;
 
 
@@ -55,27 +56,7 @@ private SessionFactory sessionFactory;
 		
 	}
 
-
-	/*public Boolean validUser(String name, String password) {
-		boolean check=false;
-		Session s=sessionFactory.getCurrentSession();
-	Session s=sessionFactory.openSession();
-	    Transaction t=s.beginTransaction();
-	    Query q=s.createQuery("from User where name=? and password=?");
-	   
-	    q.setString(0,name);
-	    q.setString(1, password);
-	    List list = q.list();
-	    if(list!=null && list.size()>0)
-	    {
-	    return check=true;
-	    }
-	    return check;
-	
-	}*/
-
-
-	public User getUserById(int id) {
+public User getUserById(int id) {
 	
 		Session s=sessionFactory.openSession();
 	    Transaction t=s.beginTransaction();
@@ -117,12 +98,6 @@ private SessionFactory sessionFactory;
 			
 			
 	}
-
-
-	
-			
-			
-	
 public List<User> getAllUsers() {
 	Session s=sessionFactory.openSession();
     Transaction t=s.beginTransaction();
@@ -153,7 +128,35 @@ public User getUserByName(String name) {
 	c.add(Restrictions.like("name", name));
 	return (User)c.uniqueResult();
 }
+public String addCustomer(Contact c) {
+	Session s=sessionFactory.openSession();
+	Transaction t=s.beginTransaction();
+	System.out.println("Transcation");
+	s.saveOrUpdate(c);
+	System.out.println("save");
+	t.commit();
+	s.close();
+	return "Contact";
+	}
+public List<Contact> getAllCustomer() {
+	Session s=sessionFactory.openSession();
+    Transaction t=s.beginTransaction();
+   
+		return s.createQuery("from Contact").list();
+}
+public void removecontact(int productId) {
+	Session session=sessionFactory.getCurrentSession();
 
+	// tx = session.beginTransaction();
+	Contact p=(Contact)session.get(Contact.class,new Integer(productId));
+	 System.out.print("remove dao start");
+	 System.out.println("");
+	 System.out.println("");
+	 System.out.println(productId);
+	 session.delete(p);
+
+	 
+}
 
 	}
 

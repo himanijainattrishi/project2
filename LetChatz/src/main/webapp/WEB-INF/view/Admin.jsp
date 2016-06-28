@@ -1,13 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<a href="Blog">BLOG</a>
-<a href="AllUser">VIEW ALL USER</a>
-</body>
-</html>
+<%@include file="Header.jsp" %>
+<br><br>
+ <aside class="sidebar">
+
+           <ul>	
+               <li>
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="index.html">Home Page</a></li>
+                        
+                        <li><a href="Blog">Create New Blog</a></li>
+                        <li><a href="ViewBlog">View All Blog</a><span class="badge ">${blog}</span></li>
+                       <li><a href="AllUser">View All User</a><span class="badge  ">${user}</span></li>
+                          <li><a href="viewContact">User Msg</a><span class="badge ">${message}</span></li>
+                    </ul>
+                </li>
+                
+             
+		
+        </aside>
+
+

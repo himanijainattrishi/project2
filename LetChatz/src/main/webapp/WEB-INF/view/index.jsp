@@ -1,5 +1,6 @@
 
  <%@include file="Header.jsp"%> 
+  <!-- <img class="img-responsive" src="resources/images/niitcloud.jpg" alt="event-image"> -->
 <!-- <header id="header" role="banner">		
 		<div class="main-nav">
 			<div class="container">
@@ -298,23 +299,121 @@ Contact Number : 011-42421360/62,9873845126
 					</div>
 					<div class="col-sm-5">
 						<div id="contact-section">
-							<h3>Send a message</h3>
+						<!-- 	<h3>Send a message</h3> -->
 					    	<div class="status alert alert-success" style="display: none"></div>
-					    	<form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+					    	<%-- <form:form action="contact"  class="contact-form"  method="post" commandName="user">
 					            <div class="form-group">
-					                <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+					               <input type="text" name="name" class="form-control" required="required" placeholder="Name"> 
+					          
+
+					            </div>
+					            <div class="form-group">
+					                <input type="text" name="lastname" class="form-control" required="required" placeholder="Last Name">
 					            </div>
 					            <div class="form-group">
 					                <input type="email" name="email" class="form-control" required="required" placeholder="Email ID">
+					            </div>
+					             <div class="form-group">
+					                <input type="text" name="mobile" class="form-control" required="required" placeholder="Mobile">
 					            </div>
 					            <div class="form-group">
 					                <textarea name="message" id="message" required="required" class="form-control" rows="4" placeholder="Enter your message"></textarea>
 					            </div>                        
 					            <div class="form-group">
-					                <button type="submit" class="btn btn-primary pull-right">Send</button>
+					                <input type="submit" class="btn btn-primary pull-right"/>
 					            </div>
-					        </form>	       
-					    </div>
+					        </form:form> --%>		
+					        
+					       <form:form action="Contact" class="form-horizontal" method="post" commandName="user">
+                    <fieldset>
+                        <legend class="text-center header">Contact us</legend>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="lastname" type="text" placeholder="Last Name" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="phone" name="mobile" type="text" placeholder="Phone" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                            <div class="col-md-8">
+                                <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 days." rows="7"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                           
+                         
+                            </div>
+                        </div>
+                    </fieldset>
+                </form:form> 
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					        
+					               
+				    </div>
 					</div>
 				</div>
 			</div>

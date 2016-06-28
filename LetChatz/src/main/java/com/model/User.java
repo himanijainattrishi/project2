@@ -12,8 +12,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -42,15 +44,17 @@ public class User implements Serializable {
 		this.isActive = isActive;
 	}
 	@NotEmpty
-	@Size(min=2, max=20)
+	(message="Name can not be blank")
 	private String name;
 	private String lastName;
+	@Email(message="plz provide valid email id")
 	private String email;
-	@NotEmpty
-	@Size(min=4,max=20)
+	@NotEmpty(message="password can not be blank")
+	
 	private String password;
 	private int zipcode;
 	private String state;
+	
 	private int mobile;
 	
 	private Date dob;

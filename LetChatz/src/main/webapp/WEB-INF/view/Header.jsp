@@ -46,6 +46,12 @@
   {
 	  document.getElementById("logout").submit();
   }
+   
+  /*  $(function () {
+	   $('.example-popover').popover({
+	     container: 'body'
+	   })
+	 }) */
 
   
   
@@ -53,7 +59,7 @@
   
   </script>
   <style>
-  
+ 
   
  /* body {
     margin-top: 75px;
@@ -63,6 +69,7 @@
     height: auto;
     max-width: 100%;
 }
+
 /* .navbar-default {
 	background-color: #CC0000;
 }
@@ -93,14 +100,14 @@
   transition: background .2s;
 
 }
-.form-all
+/* .form-all
 {
 
 	background: #006666;
 	border: 1px solid #00cc99;
 	border-radius: 5px;
 	color: white !important;
-}
+} */
 
 
 .form_bg {
@@ -121,13 +128,27 @@
 .align-center {
     text-align:center;
 }
-.sidebar {
+ .sidebar {
     float: left;
     width: 23%;
 	margin-top: 10px;
-}
-
+} 
+ .sidebar1 {
+    float: right;
+    width: 23%;
+	margin-top: 10px;
+} 
 .sidebar h4 {
+	padding-bottom: 0;
+	font-size: 13px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: normal;
+	padding: 7px 7px;
+	border-bottom: 1px solid #A31923;
+  	background-color: #DE2D3A;
+}
+.sidebar1 h4 {
 	padding-bottom: 0;
 	font-size: 13px;
 	color: #fff;
@@ -143,14 +164,27 @@
 	padding: 0;
 	list-style: none;
 }
-
+.sidebar1 ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
 .sidebar ul li {
+	background-color: #E6E7E9;
+	margin-bottom: 20px;
+	line-height: 1.9em;
+}
+.sidebar1 ul li {
 	background-color: #E6E7E9;
 	margin-bottom: 20px;
 	line-height: 1.9em;
 }
 
 .sidebar li ul {
+    list-style: none outside none;
+    margin: 0px;
+}
+.sidebar1 li ul {
     list-style: none outside none;
     margin: 0px;
 }
@@ -163,12 +197,25 @@
 	line-height: 1.5em;
 	font-size: 13.5px;
 }
+.sidebar1 li ul li {
+	display: block;
+	border-top: none;
+	padding: 7px;
+	margin: 0;
+	line-height: 1.5em;
+	font-size: 13.5px;
+}
 
 .sidebar li ul li.text { 
 	border-bottom: none;
 }
-
+.sidebar1 li ul li.text { 
+	border-bottom: none;
+}
 .sidebar li ul li a {
+	font-weight: normal;
+}
+.sidebar1 li ul li a {
 	font-weight: normal;
 }
 
@@ -181,17 +228,21 @@
    color: #799AC0;
    font-weight: bold;
 }
+.sidebar1 li ul li a.readmore {
+   color: #799AC0;
+   font-weight: bold;
+}
 
  
+ 
 
-
-#container {
+/* #container {
 	width: 960px;
 	margin: 20px auto;
 	padding: 10px;
 	box-shadow: 0 5px 5px 5px #CCCCCC;
 	background-color: #fff;
-}
+} */
 #content {
     float: right;
     width: 71%;
@@ -202,6 +253,7 @@
 
  </head>
  <body>
+ <img class="img-responsive" src="resources/images/niitcloud.jpg" alt="event-image">
   <header class="navbar navbar navbar-fixed-top bs-docs-nav" role="banner">
     <div class="collapse navbar-collapse">
      <div class="navbar-header">
@@ -223,7 +275,7 @@
         </form>
         
         
-        
+   <!--    -->
         
         
         

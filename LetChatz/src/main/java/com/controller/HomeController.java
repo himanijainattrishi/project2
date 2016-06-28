@@ -22,13 +22,6 @@ public class HomeController
 	  }
 	
 	
-	 @RequestMapping("/Contact")
-	  public ModelAndView contactus()
-	  {
-		 
-		  ModelAndView model=new ModelAndView("Contact");
-		  return model;
-	  }
 	
 	
 	

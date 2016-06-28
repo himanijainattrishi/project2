@@ -1,7 +1,7 @@
 <%@ include file="Header.jsp"%>
 <style>
 
-table {
+/* table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
@@ -16,10 +16,10 @@ th, td {
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
-
+ */
 </style>
-
-<section data-ng-app="">
+<br><br><br>
+<%-- <section data-ng-app="">
 	<div class="table responsive">
 		<div class="table" style="overflow-x:auto;">
 			<div style="height: 50px; padding-left: 200px; width: 500px;">
@@ -60,9 +60,10 @@ tr:nth-child(even){background-color: #f2f2f2}
 						}
 					});
 				}
-			</script>
+			</script> --%>
 		
-				<table id="myTable" class="span5 center-table">
+			<!-- 	<table align="center" id="myTable1" class="table table-inverse"> -->
+			<table align="center" id="myTable" class="table table-inverse" >
 					<tr>
 					    <th>User ID</th>
 						<th>Username</th>
@@ -85,16 +86,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 								<td><c:out value=" ${user.mobile}"></c:out></td>
 								<td><c:out value=" ${user.city}"></c:out></td>
 								<td><img src="<c:url value='/resources/pics/${user.id}.jpg' />" height="50" width="50" /></td>
-								 <td><%-- <a
-									href="<spring:url value="/viewUser?userid=${user.id}" />"
-									class="btn btn-info"> <span
-										class="glyphicon-info-sign glyphicon"> </span> Details
-								</a> 
-										<a
-											href="<spring:url value="/editUser?userid=${user.id}" />"
-											class="btn btn-danger"> <span
-											class="glyphicon-info-sign glyphicon"> </span> Update
-										</a> --%>
+								 <td>
 										<a
 											href="<spring:url value="/remove/${user.id}" />"
 											class="btn btn-warning"> <span
@@ -106,8 +98,8 @@ tr:nth-child(even){background-color: #f2f2f2}
 						</c:forEach>
 					</c:if>
 				</table>
-		</div>
+	<!-- 	</div>
 	</div>
 
-</section>
+</section> -->
 <%@ include file="Footer.jsp"%>

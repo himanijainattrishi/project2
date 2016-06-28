@@ -15,7 +15,7 @@
           <h6>Upload a different photo...</h6>
           <form:input type="file" path="image"  class="form-control"/>  --%>
          
-    <%-- <img src="resources/pics/${u.id}.jpg" class=".img-circle" height="300" width="300"/> --%>
+    <img src="resources/pics/${u.id}.jpg" class=".img-circle" height="300" width="300"/> 
          
           
         </div>

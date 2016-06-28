@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
-                <form class="form-horizontal" method="post">
+                <form:form action="Contact" class="form-horizontal" method="post" commandName="user">
                     <fieldset>
                         <legend class="text-center header">Contact us</legend>
 
@@ -18,7 +18,7 @@
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
+                                <input id="lname" name="lastname" type="text" placeholder="Last Name" class="form-control">
                             </div>
                         </div>
 
@@ -32,7 +32,7 @@
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                                <input id="phone" name="mobile" type="text" placeholder="Phone" class="form-control">
                             </div>
                         </div>
 
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                     </fieldset>
-                </form>
+                </form:form>
             </div>
         </div>
     </div>

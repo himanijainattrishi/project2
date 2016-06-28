@@ -2,7 +2,7 @@
 <div class="container">
 <div>
  
-<div class="well" id="form-all">
+<!-- <div class="well" id="form-all"> -->
 <form:form action="useradd1" class="form-horizontal well" enctype="multipart/form-data" method="post" commandName="user">
 
  <fieldset>
@@ -14,13 +14,13 @@
   
  
                     <div class="col-xs-8">
-                    <div class="form-group">
+                  <div class="form-group"> 
                     <div class="rows">
                         <div class="col-md-8">
                             <div class="col-lg-6">
                                NAME <form:input class="form-control input-lg" 
 
-path="name"/> 
+path="name"/> <form:errors path="name" cssStyle="color:FF0000;"/>
 </div>
 <div class="col-lg-6">
                              LAST NAME   <form:input class="form-control 
@@ -37,7 +37,7 @@ input-lg" path="lastName"/>
                             <div class="col-lg-12">
                              PASSWORD <form:password class="form-control 
 
-input-lg" path="password"/>
+input-lg" path="password"/><form:errors path="password" cssStyle="color:FF0000;"/>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ input-lg" path="password"/>
                             <div class="col-lg-12">
                             EMAIL-ID <form:input class="form-control input-
 
-lg" path="email"/>  <form:errors path="email" cssClass="error" />
+lg" path="email"/> <form:errors path="email" cssStyle="color:FF0000;"/>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@ lg" path="email"/>  <form:errors path="email" cssClass="error" />
                             <div class="col-lg-12">
                                MOBILE <form:input class="form-control 
 
-input-lg" path="mobile"/>
+input-lg" path="mobile"/> 
                             </div>
                         </div>
                     </div>
