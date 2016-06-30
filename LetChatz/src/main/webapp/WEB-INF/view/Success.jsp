@@ -26,6 +26,7 @@ $(document).ready(function(){
                         <li><a href="ViewBlog">View All Blog</a></li>
                         <li><a href="angular">My Blog</a></li>
                          <li><a href="Chat">Chat</a></li>
+                         <li><a href="ChatForum">Forum</a></li>
                     </ul>
                 </li>
                 

@@ -197,6 +197,11 @@ public class AdminController {
 		 m.addAttribute("customer",l);
 		  return "viewContact";
 	  }
+	 @RequestMapping("/ChatForum")
+	 public String chatforum()
+	 {
+		 return "ChatForum";
+	 }
 	 
 			
 

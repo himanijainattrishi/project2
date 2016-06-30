@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/java/com/dao/UserDaoImp.java=UTF-8
+encoding//src/main/webapp/WEB-INF/view/ChatForum.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/Footer.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/Register.jsp=UTF-8
 encoding//src/main/webapp/resources/bootstrap/css/main.css=UTF-8
